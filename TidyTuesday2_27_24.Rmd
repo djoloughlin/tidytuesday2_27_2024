@@ -1,0 +1,56 @@
+---
+title: "Tidy Tuesday 27 Feb 2024"
+author: "COMP/STAT 112"
+date: "2024-02-28"
+output: html_document
+---
+
+
+
+# Leap Day
+
+Happy Leap Day! This week's data comes from the [February 29](https://en.wikipedia.org/wiki/February_29) article on Wikipedia.
+
+> February 29 is a leap day (or "leap year day"), an intercalary date added periodically to create leap years in the Julian and Gregorian calendars.
+
+One event that's missing from Wikipedia's list: [R version 1.0 was released on February 29, 2000](https://en.wikipedia.org/wiki/R_(programming_language)#History).
+
+Which cohort of leap day births is most represented in Wikipedia's data? Are any years surprisingly underrepresented compared to nearby years? What other patterns can you find in the data?
+
+## The Data
+
+```{r,message=FALSE,warning=FALSE}
+
+# load in packages
+
+library(tidytuesdayR)
+library(tidyverse)
+
+```
+
+```{r,message=FALSE}
+
+# load in data
+
+
+births <- read_csv("https://raw.githubusercontent.com/djoloughlin/tidytuesday2_27_2024/main/births")
+
+deaths <- read_csv("https://raw.githubusercontent.com/djoloughlin/tidytuesday2_27_2024/main/deaths")
+
+events <- read_csv("https://raw.githubusercontent.com/djoloughlin/tidytuesday2_27_2024/main/events")
+
+  
+str(events)
+
+str(births)
+
+str(deaths)
+
+
+```
+
+## How to Participate
+
+- [Explore the data](https://r4ds.hadley.nz/), watching out for interesting relationships. We would like to emphasize that you should not draw conclusions about **causation** in the data. There are various moderating variables that affect all data, many of which might not have been captured in these datasets. As such, our suggestion is to use the data provided to practice your data tidying and plotting techniques, and to consider for yourself what nuances might underlie these relationships.
+- Create a visualization, a model, a [shiny app](https://shiny.posit.co/), or some other piece of data-science-related output, using R or another programming language.
+- [Share your output and the code used to generate it](../../../sharing.md) on social media with the #TidyTuesday hashtag.
